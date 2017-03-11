@@ -1,6 +1,6 @@
 {
   "name": "express-oidc-jwks-verify",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Parse and verify JWS x5c from the OpenID Connect jwks_uri",
   "main": "index.js",
   "scripts": {

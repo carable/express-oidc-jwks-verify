@@ -27,6 +27,10 @@ const verify = function (options) {
   let publicKey;
 
   return function (req, res, next) {
+    if (req.method.toLowerCase() === 'options' && !req.header('Authorization')) {
+      return next();
+    }
+
     if (!publicKey) {
       async.waterfall(
         [
