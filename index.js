@@ -53,7 +53,7 @@ const verify = function (options) {
             const certFilename = path.join(__dirname, 'tmp.crt');
 
             fs.writeFileSync(certFilename, x5cFormatted, { encoding: 'UTF-8' });
-            const parsedKey = x509.parseCert(fs.readFile(certFilename));
+            const parsedKey = x509.parseCert(fs.readFileSync(certFilename));
             const key = new NodeRSA();
 
             key.importKey({
