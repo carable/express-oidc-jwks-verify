@@ -8,7 +8,7 @@ const NodeRSA = require('node-rsa');
 const path = require('path');
 const request = require('request');
 const urlJoin = require('url-join');
-const x509 = require('x509');
+const x509 = require('x509.js');
 
 const OIDC_DISCOVERY_PATH = '/.well-known/openid-configuration';
 
