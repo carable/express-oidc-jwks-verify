@@ -32,7 +32,7 @@
     "node-rsa": "^0.4.2",
     "request": "^2.79.0",
     "url-join": "^1.1.0",
-    "x509": "^0.3.1"
+    "x509.js": "^1.0.0"
   },
   "devDependencies": {
     "eslint": "^3.15.0",
