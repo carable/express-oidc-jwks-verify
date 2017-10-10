@@ -59,7 +59,7 @@ const verify = function (options) {
             // compare this to https://github.com/Southern/node-x509#x509parsecertcert
             key.importKey({
               n: new Buffer(parsedKey.publicModulus, 'hex'),
-              e: parseInt(parsedKey.publicExponent, 10)
+              e: parseInt(parsedKey.publicExponent, 16)
             }, 'components-public');
 
             publicKey = key.exportKey('public');
