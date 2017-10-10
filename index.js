@@ -55,10 +55,11 @@ const verify = function (options) {
             fs.writeFileSync(certFilename, x5cFormatted, { encoding: 'UTF-8' });
             const parsedKey = x509.parseCert(fs.readFileSync(certFilename));
             const key = new NodeRSA();
-
+            // based on https://github.com/encharm/x509.js/blob/master/README.md#usage
+            // compare this to https://github.com/Southern/node-x509#x509parsecertcert
             key.importKey({
-              n: new Buffer(parsedKey.publicKey.n, 'hex'),
-              e: parseInt(parsedKey.publicKey.e, 10)
+              n: new Buffer(parsedKey.publicModulus, 'hex'),
+              e: parseInt(parsedKey.publicExponent, 10)
             }, 'components-public');
 
             publicKey = key.exportKey('public');
